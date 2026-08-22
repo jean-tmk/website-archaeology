@@ -1,24 +1,120 @@
 # Website Archaeology
 
-An interactive excavation of four buried website eras. Drag across the present-day surface, catalogue interface fragments, and descend from the optimized web of 2026 to the handmade source of 1996.
+> An interactive excavation through four buried eras of the web.
 
-The excavation model, stratigraphic records, artifact catalogue, preservation scoring, and reconstruction rules live in Rust. The browser layer provides the canvas renderer and exhibit interface.
+**Live exhibit:** https://jean-tmk.github.io/website-archaeology/
 
-## Field controls
+## What it is
 
-- Press and drag to excavate.
-- Change brush diameter for broad or precise removal.
-- Use Survey Sweep to expose a transect quickly.
-- Recover three artifacts from each era.
-- Expose 68% of a layer to descend.
+The project frames interface history as archaeology. Instead of reading a timeline, the visitor physically removes the current layer, recovers artifacts, and descends into older assumptions about layout, navigation, decoration, and authorship.
 
-## Run locally
+## What a visitor can do
 
-Open `index.html` with any static web server.
+1. Press and drag across the surface to excavate.
+2. Change brush size for broad or precise removal.
+3. Use Survey Sweep to expose a quick transect.
+4. Recover three artifacts and expose enough of a layer to descend to the next era.
 
-## Structure
+## How it works
 
-- `src/lib.rs` — Rust excavation engine and archival model
-- `app.js` — browser interaction and canvas renderer
-- `styles.css` — exhibit and buried-site visual systems
-- `index.html` — semantic interface shell
+- Rust defines strata, artifacts, excavation state, preservation scoring, progress rules, and reconstruction records.
+- The browser canvas tracks the mask removed by each brush stroke and reveals the corresponding historical layer.
+- The interface coordinates tools, artifact records, layer transitions, progress, and keyboard-accessible controls.
+
+## Repository map
+
+| Path | What it does |
+|---|---|
+| `.github/workflows/pages.yml` | GitHub Actions workflow that validates, builds, and/or deploys the exhibit. |
+| `Cargo.toml` | Rust crate metadata and compilation settings. |
+| `app.js` | The browser interaction runtime and top-level state coordinator. |
+| `index.html` | The deployable HTML shell: metadata, accessible structure, controls, and script/style entry points. |
+| `src/lib.rs` | Domain, engine, tooling, or specification source in the repository’s polyglot architecture. |
+| `styles.css` | The primary responsive visual system. |
+| `polyglot/` | 59 isolated language-atlas files plus the majority registry and manifest; these never load in the visible frontend. |
+
+## Languages and why they are here
+
+Percentages below are calculated from the byte counts currently returned by GitHub Linguist. Tiny language-atlas modules are intentionally isolated from the production frontend.
+
+| Language | GitHub | Role |
+|---|---:|---|
+| Rust | 88.4% | the majority excavation and archival domain engine |
+| HTML | 2.1% | semantic museum shell |
+| FreeBASIC | 0.4% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Verilog | 0.3% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Linear Programming | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Grammatical Framework | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Java | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Scheme | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| LiveCode Script | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Parrot | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| EmberScript | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| ColdFusion | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| PogoScript | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| SurrealQL | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| GDScript | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| LigoLANG | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| NWScript | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| ASP.NET | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Befunge | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| CAP CDS | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Daslang | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| ECL | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Gherkin | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| MoonBit | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| C | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Fantom | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Oberon | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Smithy | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Wollok | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Cirru | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Curry | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Idris | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Rebol | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Xonsh | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| ABAP | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Haxe | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Just | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| LLVM | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Mako | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Mint | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| REXX | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| RenderScript | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Sail | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Shen | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Tact | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Awk | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Boo | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Lex | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Nim | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| QML | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| Zig | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| ooc | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| M4 | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+| P4 | 0.2% | an isolated language-atlas adapter used to broaden the comparative polyglot collection without changing the exhibit UI |
+
+### About the language atlas
+
+Where present, `polyglot/language-atlas.json` is the machine-readable index of the languages assigned to this repository. `polyglot/languages/` contains one small, independent signature module per assignment, and `polyglot/majority/` contains the larger registry that preserves the intended majority language. These files are documentation and comparative code specimens: the live site does not download or execute them.
+
+## Local development
+
+```bash
+python3 -m http.server 8000
+cargo test
+```
+
+Then open `http://localhost:8000` unless the framework development server prints a different local address.
+
+## Privacy and access
+
+- No sign-in is required.
+- No API key is required for the live exhibit.
+- No visitor text is sent to an AI service.
+- Any saved progress stays in local browser storage unless the README explicitly describes an optional external architecture.
+- Sound begins only after a user gesture where browser autoplay rules require it.
+
+## Deployment
+
+The public version is a static GitHub Pages deployment. The workflow in `.github/workflows/` is the source of truth for its exact build and publish steps. The favicon is stored with the deployed app so browser tabs and bookmarks use the project’s own mark.
